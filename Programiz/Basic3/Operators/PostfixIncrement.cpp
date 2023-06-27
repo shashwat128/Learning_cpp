@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Prefix Increment ++ operator overloading with return type
 class Check
 {
 private:
@@ -9,14 +8,17 @@ private:
 
 public:
     Check() : i(0) {}
-
-    // Return type is Check
     Check operator++()
     {
         Check temp;
-        ++i;
-        temp.i = i;
+        temp.i = ++i;
+        return temp;
+    }
 
+    Check operator++(int)
+    {
+        Check temp;
+        temp.i = i++;
         return temp;
     }
 
@@ -33,7 +35,10 @@ int main()
     obj1.Display();
 
     obj1 = ++obj;
+    obj.Display();
+    obj1.Display();
 
+    obj1 = obj++;
     obj.Display();
     obj1.Display();
 
