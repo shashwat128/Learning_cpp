@@ -16,7 +16,8 @@ int main()
     cyclicSwap(&a, &b, &c);
 
     cout << "Value after swapping numbers in cycle: " << endl;
-    cout << "a : " << a << "\nb : " << b << "\nc : " << c << endl;
+    cout << "a : " << a << " : " << &a << "\nb : "
+         << " : " << b << &b << "\nc : " << c << " : " << &c << endl;
 
     return 0;
 }
